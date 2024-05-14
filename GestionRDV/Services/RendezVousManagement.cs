@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GestionRDV.Business;
 using GestionRDV.Common;
 using static System.Reflection.Metadata.BlobBuilder;
 
@@ -11,8 +12,11 @@ namespace GestionRDV.Services
     /// <summary>
     /// Classe pour gérer la gestion des rendez-vous
     /// </summary>
-    public class RendezVousManagement
+    public class RendezVousManagement 
     {
+        public RendezVousManagement()
+        {
+        }
         /// <summary>
         /// Liste des objets RendezVous
         /// </summary>
@@ -50,7 +54,11 @@ namespace GestionRDV.Services
                 Console.WriteLine("Description: " + rendezVous.Description);
             }
         }
-
+        /// <summary>
+        /// Méthode pour mettre a jour les rendez-vous déja ajoutés
+        /// </summary>
+        /// <param name="rendezVous"></param>
+        /// <returns></returns>
         public static string MettreAJourRendezVous(RendezVous rendezVous)
         {
             var rendezVousToUpdate = RendezVousList.Find(x => x.Id == rendezVous.Id);

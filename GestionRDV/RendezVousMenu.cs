@@ -17,6 +17,7 @@ namespace GestionRDV
         public static List<Common.RendezVous> RendezVousList { get; set; } = new List<Common.RendezVous>();
         public static void Menu()
         {
+            /// Menu principal pour gérer les rendez-vous
             Console.WriteLine("Bienvenue dans le gestionnaire de rendez-vous");
             while (true)
             {
@@ -30,9 +31,10 @@ namespace GestionRDV
                 switch (choice)
                 {
                     case 1:
+                        Console.Clear();
                         /// Demmande des informations du rendez-vous à ajouter et appel de la méthode AjouterRendezVous avec les attributs du rendez-vous
                         Console.WriteLine("Ajouter les informations du rendez-vous à poser");
-                        Console.WriteLine("Entrer l'ID du rendez-vous");
+                        Console.WriteLine("Entrer l'ID du rendez-vous *Obligatoire*");
                         int id = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Entrer la date du rendez-vous (exemple : 05)");
                         string date = Console.ReadLine();
@@ -56,11 +58,14 @@ namespace GestionRDV
                         RendezVousManagement.AjouterRendezVous(rendezVous);
                         break;
                     case 2:
+                        Console.Clear();
                         /// Appel de la méthode AfficherRendezVous
                         Console.WriteLine("Liste des rendez-vous");
                         RendezVousManagement.AfficherRendezVous();
                         break;
                     case 3:
+                        Console.Clear();
+                        /// Appel pour mettre à jour un rendez-vous
                         Console.WriteLine("Mettre à jour un rendez-vous");
                         Console.WriteLine("Entrer l'ID du rendez-vous à mettre à jour");
                         int idToUpdate = Convert.ToInt32(Console.ReadLine());
@@ -87,6 +92,7 @@ namespace GestionRDV
                         break;
 
                     case 4:
+                        Console.Clear();
                         /// Demmande de l'ID du rendez-vous à supprimer et appel de la méthode SupprimerRendezVous avec l'attribut de l'ID du rendez-vous
                         Console.WriteLine("Entrez l'ID du rendez-vous à supprimer");
                         int idToDelete = Convert.ToInt32(Console.ReadLine());
@@ -94,6 +100,7 @@ namespace GestionRDV
                         if (rendezVoustoDelete != null)
                         {
                             RendezVousManagement.SupprimerRendezVous(rendezVoustoDelete);
+                            Console.WriteLine("Rendez-vous supprimé avec succès");
                         }
                         else
                         {
