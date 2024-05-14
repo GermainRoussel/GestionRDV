@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionRDV.Common
+namespace Common
 {
     /// <summary>
     /// Classe RendezVous qui contient les attributs d'un rendez-vous

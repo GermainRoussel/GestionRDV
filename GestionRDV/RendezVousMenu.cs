@@ -3,20 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GestionRDV.Services;
-using GestionRDV.Common;
+using Business;
+using Common;
+using Microsoft.Extensions.DependencyInjection;
+using Services;
 
 
 namespace GestionRDV
 {
     public class RendezVousMenu
     {
+      
         public RendezVousMenu()
         {
+            
         }
-        public static List<Common.RendezVous> RendezVousList { get; set; } = new List<Common.RendezVous>();
+        /// <summary>
+        /// List d'objets RendezVous pour stocker les rendez-vous
+        /// </summary>
+        public static List<RendezVous> RendezVousList { get; set; } = new List<RendezVous>();
+
         public static void Menu()
         {
+            var serviceProvider = new ServiceCollection().AddSingleton<IRendezVousManagement, RendezVousManagement>().BuildServiceProvider();
+            var _rendezVousManagement = serviceProvider.GetService<IRendezVousManagement>();
             /// Menu principal pour gérer les rendez-vous
             Console.WriteLine("Bienvenue dans le gestionnaire de rendez-vous");
             while (true)
@@ -55,13 +65,14 @@ namespace GestionRDV
                             Name = name,
                             Description = description
                         };
-                        RendezVousManagement.AjouterRendezVous(rendezVous);
+
+                        _rendezVousManagement.AjouterRendezVous(rendezVous);
                         break;
                     case 2:
                         Console.Clear();
                         /// Appel de la méthode AfficherRendezVous
                         Console.WriteLine("Liste des rendez-vous");
-                        RendezVousManagement.AfficherRendezVous();
+                        _rendezVousManagement.AfficherRendezVous();
                         break;
                     case 3:
                         Console.Clear();
@@ -79,6 +90,7 @@ namespace GestionRDV
                         string monthToUpdate = Console.ReadLine();
                         Console.WriteLine("Entrer l'heure du rendez-vous (Format 00:00");
                         string hourToUpdate = Console.ReadLine();
+                        /// Transformation des données récupérées en objet RendezVous et appel de la méthode MettreAJourRendezVous
                         RendezVous rendezVousToUpdate = new RendezVous()
                         {
                             Id = idToUpdate,
@@ -88,7 +100,7 @@ namespace GestionRDV
                             DateMonth = monthToUpdate,
                             Hour = hourToUpdate
                         };
-                        RendezVousManagement.MettreAJourRendezVous(rendezVousToUpdate);
+                        _rendezVousManagement.MettreAJourRendezVous(rendezVousToUpdate);
                         break;
 
                     case 4:
@@ -96,17 +108,16 @@ namespace GestionRDV
                         /// Demmande de l'ID du rendez-vous à supprimer et appel de la méthode SupprimerRendezVous avec l'attribut de l'ID du rendez-vous
                         Console.WriteLine("Entrez l'ID du rendez-vous à supprimer");
                         int idToDelete = Convert.ToInt32(Console.ReadLine());
-                        RendezVous rendezVoustoDelete = RendezVousManagement.RendezVousList.FirstOrDefault(r => r.Id == idToDelete);
+                        RendezVous rendezVoustoDelete = _rendezVousManagement.RendezVousList.FirstOrDefault(r => r.Id == idToDelete);
                         if (rendezVoustoDelete != null)
                         {
-                            RendezVousManagement.SupprimerRendezVous(rendezVoustoDelete);
+                            _rendezVousManagement.SupprimerRendezVous(rendezVoustoDelete);
                             Console.WriteLine("Rendez-vous supprimé avec succès");
                         }
                         else
                         {
                             Console.WriteLine("Rendez-vous non trouvé");
                         }
-                       
                         break;
                     case 5:
                         Environment.Exit(0);

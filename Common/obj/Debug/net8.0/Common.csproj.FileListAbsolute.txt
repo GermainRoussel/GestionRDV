@@ -1,0 +1,12 @@
+C:\Users\germr\source\repos\GestionRDV\Common\bin\Debug\net8.0\Common.deps.json
+C:\Users\germr\source\repos\GestionRDV\Common\bin\Debug\net8.0\Common.dll
+C:\Users\germr\source\repos\GestionRDV\Common\bin\Debug\net8.0\Common.pdb
+C:\Users\germr\source\repos\GestionRDV\Common\obj\Debug\net8.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\germr\source\repos\GestionRDV\Common\obj\Debug\net8.0\Common.AssemblyInfoInputs.cache
+C:\Users\germr\source\repos\GestionRDV\Common\obj\Debug\net8.0\Common.AssemblyInfo.cs
+C:\Users\germr\source\repos\GestionRDV\Common\obj\Debug\net8.0\Common.csproj.CoreCompileInputs.cache
+C:\Users\germr\source\repos\GestionRDV\Common\obj\Debug\net8.0\Common.sourcelink.json
+C:\Users\germr\source\repos\GestionRDV\Common\obj\Debug\net8.0\Common.dll
+C:\Users\germr\source\repos\GestionRDV\Common\obj\Debug\net8.0\refint\Common.dll
+C:\Users\germr\source\repos\GestionRDV\Common\obj\Debug\net8.0\Common.pdb
+C:\Users\germr\source\repos\GestionRDV\Common\obj\Debug\net8.0\ref\Common.dll

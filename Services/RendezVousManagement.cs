@@ -1,32 +1,33 @@
-﻿using System;
+﻿using Business;
+using Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GestionRDV.Business;
-using GestionRDV.Common;
 using static System.Reflection.Metadata.BlobBuilder;
 
-namespace GestionRDV.Services
+namespace Services
 {   
     /// <summary>
     /// Classe pour gérer la gestion des rendez-vous
     /// </summary>
-    public class RendezVousManagement 
+    public class RendezVousManagement : IRendezVousManagement
     {
+      
         public RendezVousManagement()
         {
         }
         /// <summary>
         /// Liste des objets RendezVous
         /// </summary>
-        public static List<RendezVous> RendezVousList { get; set; } = new List<RendezVous>();
+        public List<RendezVous> RendezVousList { get; set; } = new List<RendezVous>();
         /// <summary>
         /// Méthode pour ajouter un rendez-vous à la liste
         /// </summary>
         /// <param name="rendezVous">
         /// Prend en paramètre RendezVous qui doit avoir les attributs de RendezVous</param>
-        public static void AjouterRendezVous(RendezVous rendezVous)
+        public void AjouterRendezVous(RendezVous rendezVous)
         {
             if (ExistRendezVous(rendezVous.Id))
             { 
@@ -41,7 +42,7 @@ namespace GestionRDV.Services
         /// <summary>
         /// Méthode pour afficher les rendez-vous déja ajoutés
         /// </summary>
-        public static void AfficherRendezVous()
+        public void AfficherRendezVous()
         {
             foreach (RendezVous rendezVous in RendezVousList)
             {
@@ -59,7 +60,7 @@ namespace GestionRDV.Services
         /// </summary>
         /// <param name="rendezVous"></param>
         /// <returns></returns>
-        public static string MettreAJourRendezVous(RendezVous rendezVous)
+        public string MettreAJourRendezVous(RendezVous rendezVous)
         {
             var rendezVousToUpdate = RendezVousList.Find(x => x.Id == rendezVous.Id);
             if (rendezVousToUpdate == null)
@@ -77,7 +78,7 @@ namespace GestionRDV.Services
         /// Méthode pour supprimer un rendez-vous de la liste
         /// </summary>
         /// <param name="rendezVous"></param>
-        public static void SupprimerRendezVous(Common.RendezVous rendezVous)
+        public void SupprimerRendezVous(Common.RendezVous rendezVous)
         {
             RendezVousList.Remove(rendezVous);
         }
@@ -86,7 +87,7 @@ namespace GestionRDV.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static bool ExistRendezVous(int id)
+        public bool ExistRendezVous(int id)
         {
             var existRendezVous = RendezVousList.Find(x => x.Id != id);
             if (existRendezVous == null)
@@ -96,7 +97,9 @@ namespace GestionRDV.Services
             return false;
         }
 
-
-
+        string IRendezVousManagement.AjouterRendezVous(RendezVous rendezVous)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

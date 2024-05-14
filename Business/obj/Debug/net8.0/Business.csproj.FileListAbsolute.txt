@@ -1,0 +1,16 @@
+C:\Users\germr\source\repos\GestionRDV\Business\bin\Debug\net8.0\Business.deps.json
+C:\Users\germr\source\repos\GestionRDV\Business\bin\Debug\net8.0\Business.dll
+C:\Users\germr\source\repos\GestionRDV\Business\bin\Debug\net8.0\Business.pdb
+C:\Users\germr\source\repos\GestionRDV\Business\bin\Debug\net8.0\Common.dll
+C:\Users\germr\source\repos\GestionRDV\Business\bin\Debug\net8.0\Common.pdb
+C:\Users\germr\source\repos\GestionRDV\Business\obj\Debug\net8.0\Business.csproj.AssemblyReference.cache
+C:\Users\germr\source\repos\GestionRDV\Business\obj\Debug\net8.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\germr\source\repos\GestionRDV\Business\obj\Debug\net8.0\Business.AssemblyInfoInputs.cache
+C:\Users\germr\source\repos\GestionRDV\Business\obj\Debug\net8.0\Business.AssemblyInfo.cs
+C:\Users\germr\source\repos\GestionRDV\Business\obj\Debug\net8.0\Business.csproj.CoreCompileInputs.cache
+C:\Users\germr\source\repos\GestionRDV\Business\obj\Debug\net8.0\Business.sourcelink.json
+C:\Users\germr\source\repos\GestionRDV\Business\obj\Debug\net8.0\Business.csproj.Up2Date
+C:\Users\germr\source\repos\GestionRDV\Business\obj\Debug\net8.0\Business.dll
+C:\Users\germr\source\repos\GestionRDV\Business\obj\Debug\net8.0\refint\Business.dll
+C:\Users\germr\source\repos\GestionRDV\Business\obj\Debug\net8.0\Business.pdb
+C:\Users\germr\source\repos\GestionRDV\Business\obj\Debug\net8.0\ref\Business.dll
